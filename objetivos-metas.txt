@@ -1,0 +1,17 @@
+OBJETIVO GERAL
+
+Desenvolver um sistema web estático para o petshop PetRafael, permitindo a visualização dos produtos e serviços oferecidos, utilizando apenas HTML conforme os conceitos estudados nas Aulas 1 a 5 da disciplina Fundamentos de Sistemas Web.
+
+
+METAS ESPECÍFICAS
+
+1. Criar a estrutura básica do site com múltiplas páginas HTML (index.html, produtos.html, servicos.html e contato.html), incluindo cabeçalho, corpo e rodapé padronizados.
+
+2. Apresentar, na página produtos.html, ao menos dois produtos para cada uma das três categorias: acessórios, rações não perecíveis e higiene e limpeza, contendo imagem, descrição e valor.
+
+3. Descrever, na página servicos.html, os serviços de banho e tosa, com e sem tele-busca, incluindo valores e breve explicação de cada serviço.
+
+4. Disponibilizar, em todas as páginas do site, informações de contato, autoria e informações legais no rodapé, reforçando a identificação do PetRafael e do autor do projeto.
+
+5. Publicar o site no GitHub Pages, mantendo um repositório organizado com todos os arquivos HTML e um arquivo de ajuda descrevendo as funcionalidades de cada página, facilitando a avaliação e o acesso ao sistema pelos professores e colegas.
+
