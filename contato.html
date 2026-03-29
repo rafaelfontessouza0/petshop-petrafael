@@ -51,7 +51,9 @@
       <h2 id="titulo-mensagem" class="h5">Envie uma mensagem</h2>
       <p class="text-muted">Preencha os campos obrigatórios. O envio é apenas simulado no navegador.</p>
 
-      <form id="form-contato" class="col-lg-8 px-0">
+      <div class="row">
+      <div class="col-lg-8">
+      <form id="form-contato">
         <div class="mb-3">
           <label for="contato-nome" class="form-label">Nome <span class="text-danger" aria-hidden="true">*</span></label>
           <input type="text" class="form-control" id="contato-nome" name="nome" required placeholder="Seu nome completo" autocomplete="name">
@@ -76,6 +78,8 @@
         <div id="status-contato" class="alert d-none mb-3" role="status"></div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
+      </div>
+      </div>
     </section>
   </main>
 
