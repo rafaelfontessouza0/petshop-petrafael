@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cadastro de cliente e pet no PetRafael.">
+  <title>PetRafael — Cadastro cliente e pet</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable btn btn-sm btn-primary position-fixed top-0 start-0 m-2 z-3" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <header class="border-bottom bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Menu principal do PetRafael">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">PetRafael</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir ou fechar menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link active" href="cadastro.html" aria-current="page">Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="container py-4" tabindex="-1">
+    <h1 class="h2 mb-3">Cadastro de cliente e pet</h1>
+    <p class="text-muted">
+      Preencha os dados abaixo. Campos marcados com <span class="text-danger">*</span> são obrigatórios.
+      Este formulário é uma demonstração: não há envio a servidor (veja <a href="README-ajuda.txt">README-ajuda</a>).
+    </p>
+
+    <!-- Formulário: identificação do titular e do animal -->
+    <form id="form-cadastro-cliente-pet">
+      <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2 h5">Dados do cliente</legend>
+
+        <div class="row g-3">
+          <div class="col-md-8">
+            <label for="cadastro-nome-cliente" class="form-label">Nome completo <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="text" class="form-control" id="cadastro-nome-cliente" name="nome_cliente" required autocomplete="name" placeholder="Ex.: Maria Silva">
+            <div class="invalid-feedback">Informe o nome completo.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="cadastro-cpf" class="form-label">CPF <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="text" class="form-control" id="cadastro-cpf" name="cpf" required inputmode="numeric" placeholder="000.000.000-00" aria-describedby="ajuda-cpf">
+            <div id="ajuda-cpf" class="form-text">Onze dígitos; a máscara é aplicada ao digitar.</div>
+          </div>
+          <div class="col-12">
+            <label for="cadastro-endereco" class="form-label">Endereço completo <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="text" class="form-control" id="cadastro-endereco" name="endereco" required autocomplete="street-address" placeholder="Rua, número, bairro, cidade/UF, CEP">
+          </div>
+          <div class="col-md-6">
+            <span class="form-label d-block">Sexo <span class="text-danger" aria-hidden="true">*</span></span>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="sexo" id="sexo-f" value="feminino" required>
+              <label class="form-check-label" for="sexo-f">Feminino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="sexo" id="sexo-m" value="masculino">
+              <label class="form-check-label" for="sexo-m">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="sexo" id="sexo-o" value="outro">
+              <label class="form-check-label" for="sexo-o">Outro</label>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="cadastro-telefone" class="form-label">Telefone <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="tel" class="form-control" id="cadastro-telefone" name="telefone" required autocomplete="tel" placeholder="(11) 99999-9999">
+          </div>
+          <div class="col-md-3">
+            <label for="cadastro-email" class="form-label">E-mail <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="email" class="form-control" id="cadastro-email" name="email" required autocomplete="email" placeholder="nome@email.com">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cadastro-news" name="newsletter" value="sim">
+              <label class="form-check-label" for="cadastro-news">Desejo receber ofertas e novidades por e-mail</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="border rounded p-3 mb-4">
+        <legend class="float-none w-auto px-2 h5">Dados do pet</legend>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="cadastro-nome-pet" class="form-label">Nome do pet <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="text" class="form-control" id="cadastro-nome-pet" name="nome_pet" required placeholder="Ex.: Thor">
+          </div>
+          <div class="col-md-4">
+            <label for="cadastro-raca" class="form-label">Raça <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="text" class="form-control" id="cadastro-raca" name="raca" required placeholder="Ex.: SRD, Persa, Labrador">
+          </div>
+          <div class="col-md-2">
+            <label for="cadastro-idade" class="form-label">Idade (anos) <span class="text-danger" aria-hidden="true">*</span></label>
+            <input type="number" class="form-control" id="cadastro-idade" name="idade_pet" required min="0" max="30" step="1" placeholder="0">
+          </div>
+          <div class="col-md-6">
+            <span class="form-label d-block">Espécie <span class="text-danger" aria-hidden="true">*</span></span>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="especie" id="esp-cao" value="cao" required>
+              <label class="form-check-label" for="esp-cao">Cão</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="especie" id="esp-gato" value="gato">
+              <label class="form-check-label" for="esp-gato">Gato</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-check mt-md-4">
+              <input class="form-check-input" type="checkbox" id="cadastro-vacinado" name="vacinado" value="sim">
+              <label class="form-check-label" for="cadastro-vacinado">Declaro que o pet está com vacinas em dia</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div id="status-formulario" class="alert d-none mb-3" role="status" aria-live="polite"></div>
+
+      <button type="submit" class="btn btn-primary">Enviar cadastro (simulação)</button>
+      <button type="reset" class="btn btn-outline-secondary">Limpar</button>
+    </form>
+  </main>
+
+  <footer class="bg-light border-top py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 small">© <span id="ano-atual">2026</span> PetRafael.</p>
+      <nav aria-label="Rodapé">
+        <a href="index.html">Início</a> · <a href="cadastro.html">Cadastro</a> · <a href="agendamento.html">Agendamento</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/formularios.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agende banho ou tosa com tele-busca ou atendimento na loja PetRafael.">
+  <title>PetRafael — Agendamento de serviços</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <a class="visually-hidden-focusable btn btn-sm btn-primary position-fixed top-0 start-0 m-2 z-3" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <header class="border-bottom bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Menu principal do PetRafael">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">PetRafael</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir ou fechar menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link active" href="agendamento.html" aria-current="page">Agendamento</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal" class="container py-4" tabindex="-1">
+    <h1 class="h2 mb-3">Agendamento de serviço</h1>
+    <p class="text-muted">
+      Escolha <strong>banho</strong> ou <strong>tosa</strong> e o modo de atendimento:
+      <strong>tele-busca</strong> (buscamos e devolvemos o pet) ou <strong>levar o pet à loja</strong> (você entrega e retira no local).
+      Defina dia e horário no calendário abaixo. Demonstração sem envio ao servidor.
+    </p>
+
+    <form id="form-agendamento-servico" class="border rounded p-3 p-md-4 bg-white shadow-sm">
+      <fieldset class="mb-4">
+        <legend class="h6 text-uppercase text-muted">Serviço</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="servico" id="srv-banho" value="banho" required>
+          <label class="form-check-label" for="srv-banho">Banho</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="servico" id="srv-tosa" value="tosa">
+          <label class="form-check-label" for="srv-tosa">Tosa</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="mb-4">
+        <legend class="h6 text-uppercase text-muted">Modo de atendimento</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="modo_atendimento" id="modo-telebusca" value="tele-busca" required>
+          <label class="form-check-label" for="modo-telebusca">Tele-busca (busca e entrega na residência)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="modo_atendimento" id="modo-loja" value="loja">
+          <label class="form-check-label" for="modo-loja">Levar pet à loja — atendimento no local</label>
+        </div>
+      </fieldset>
+
+      <div class="mb-4">
+        <label for="agendamento-datetime" class="form-label">
+          Data e horário <span class="text-danger" aria-hidden="true">*</span>
+        </label>
+        <!-- input nativo tipo calendário + hora (amplamente suportado) -->
+        <input type="datetime-local" class="form-control" id="agendamento-datetime" name="data_hora" required aria-describedby="ajuda-datetime">
+        <div id="ajuda-datetime" class="form-text">Selecione um horário futuro dentro do funcionamento (segunda a sábado, 9h–19h).</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="agendamento-obs" class="form-label">Observações (opcional)</label>
+        <textarea class="form-control" id="agendamento-obs" name="observacoes" rows="3" placeholder="Porte do animal, medicação, medo de secador, etc."></textarea>
+      </div>
+
+      <div id="status-agendamento" class="alert d-none mb-3" role="status" aria-live="polite"></div>
+
+      <button type="submit" class="btn btn-primary">Confirmar agendamento (simulação)</button>
+    </form>
+
+    <p class="mt-3 small text-muted">
+      Valores e condições: consulte a página <a href="servicos.html">Serviços</a>. Primeiro cadastro:
+      <a href="cadastro.html">Cadastro cliente e pet</a>.
+    </p>
+  </main>
+
+  <footer class="bg-light border-top py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 small">© <span id="ano-atual">2026</span> PetRafael.</p>
+      <nav aria-label="Rodapé">
+        <a href="index.html">Início</a> · <a href="servicos.html">Serviços</a> · <a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/formularios.js"></script>
+</body>
+</html>

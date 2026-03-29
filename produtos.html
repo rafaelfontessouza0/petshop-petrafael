@@ -2,102 +2,137 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>PetRafael - Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Produtos PetRafael: acessórios, rações e higiene para pets.">
+  <title>PetRafael — Produtos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <h1>PetRafael</h1>
-    <p>Cuidando do seu pet com carinho</p>
-    <nav>
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a> |
-      <a href="contato.html">Contato</a>
+  <a class="visually-hidden-focusable btn btn-sm btn-primary position-fixed top-0 start-0 m-2 z-3" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <header class="border-bottom bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Menu principal do PetRafael">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">PetRafael</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir ou fechar menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link active" href="produtos.html" aria-current="page">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <hr>
   </header>
 
-  <!-- Corpo da página -->
-  <main>
-    <h2>Produtos PetRafael</h2>
-    <p>
-      Confira abaixo nossas principais categorias de produtos: acessórios, rações não perecíveis
-      e itens de higiene e limpeza para o seu pet.
+  <main id="conteudo-principal" class="container py-4" tabindex="-1">
+    <h1 class="h2 mb-3">Produtos PetRafael</h1>
+    <p class="lead">
+      Confira acessórios, rações não perecíveis e itens de higiene. Imagens ilustrativas com texto alternativo para acessibilidade.
     </p>
 
-    <!-- Acessórios -->
-    <section>
-      <h3>Acessórios</h3>
-
-      <article>
-        <h4>Coleira Confort Plus</h4>
-        <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300" alt="Coleira Confort Plus" width="150" height="150">
-        <p>Coleira ajustável e acolchoada, ideal para cães de pequeno e médio porte.</p>
-        <p>Valor: R$ 39,90</p>
-      </article>
-
-      <article>
-        <h4>Cama Macia PetRafael</h4>
-        <img src="https://lojacastor.com.br/media/catalog/product/cache/44430a68bb79e35612ed6cc10c6f502c/w/h/whatsapp_image_2025-10-14_at_15.26.29.jpeg" alt="Cama Macia PetRafael" width="150" height="150">
-        <p>Cama macia e confortável para cães e gatos, com revestimento lavável.</p>
-        <p>Valor: R$ 149,90</p>
-      </article>
+    <!-- Acessórios: cards Bootstrap -->
+    <section class="mb-5" aria-labelledby="titulo-acessorios">
+      <h2 id="titulo-acessorios" class="h4 border-bottom pb-2">Acessórios</h2>
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <article class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&q=80" class="card-img-top" alt="Cão de pequeno porte usando coleira escura, ilustrando o produto Coleira Confort Plus.">
+            <div class="card-body">
+              <h3 class="h5 card-title">Coleira Confort Plus</h3>
+              <p class="card-text">Coleira ajustável e acolchoada para cães de pequeno e médio porte.</p>
+              <p class="fw-bold text-primary mb-0">R$ 39,90</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&q=80" class="card-img-top" alt="Cão deitado em cama macia redonda para pets, ilustrando a Cama Macia PetRafael.">
+            <div class="card-body">
+              <h3 class="h5 card-title">Cama Macia PetRafael</h3>
+              <p class="card-text">Cama macia com revestimento lavável para cães e gatos.</p>
+              <p class="fw-bold text-primary mb-0">R$ 149,90</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Rações não perecíveis -->
-    <section>
-      <h3>Rações não perecíveis</h3>
-
-      <article>
-        <h4>Ração Seca Premium 10kg</h4>
-        <img src="https://images.tcdn.com.br/img/img_prod/1359908/atacao_original_25kg_14833_1_b18cd9bb055401fc1eedcedab56a92ce.jpeg" alt="Ração Seca Premium 10kg" width="150" height="150">
-        <p>Alimento completo para cães adultos, com vitaminas e minerais essenciais.</p>
-        <p>Valor: R$ 129,90</p>
-      </article>
-
-      <article>
-        <h4>Ração Seca Gatos Adultos 5kg</h4>
-        <img src="https://www.passaromix.com.br/wpmix/wp-content/uploads/2020/08/WhatsApp-Image-2020-08-01-at-08.41.55-548x800.jpeg" alt="Ração Seca Gatos Adultos 5kg" width="150" height="150">
-        <p>Ração balanceada para gatos adultos, rica em proteínas e taurina.</p>
-        <p>Valor: R$ 89,90</p>
-      </article>
+    <section class="mb-5" aria-labelledby="titulo-racao">
+      <h2 id="titulo-racao" class="h4 border-bottom pb-2">Rações não perecíveis</h2>
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <article class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc47a?w=600&q=80" class="card-img-top" alt="Sacos de ração seca para cães empilhados, representando a Ração Seca Premium 10kg.">
+            <div class="card-body">
+              <h3 class="h5 card-title">Ração Seca Premium 10 kg</h3>
+              <p class="card-text">Alimento completo para cães adultos, com vitaminas e minerais.</p>
+              <p class="fw-bold text-primary mb-0">R$ 129,90</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600&q=80" class="card-img-top" alt="Gato deitado em ambiente doméstico, ilustrando a categoria ração para gatos adultos.">
+            <div class="card-body">
+              <h3 class="h5 card-title">Ração Seca Gatos Adultos 5 kg</h3>
+              <p class="card-text">Ração balanceada para gatos adultos, rica em proteínas e taurina.</p>
+              <p class="fw-bold text-primary mb-0">R$ 89,90</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Higiene e limpeza -->
-    <section>
-      <h3>Higiene e limpeza</h3>
-
-      <article>
-        <h4>Tapete Higiênico Super Absorvente (30 unidades)</h4>
-        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=300" alt="Tapete e ambiente para pets" width="150" height="150">
-        <p>Tapete com gel super absorvente, ideal para treinamento de cães.</p>
-        <p>Valor: R$ 59,90</p>
-      </article>
-
-      <article>
-        <h4>Shampoo Neutro para Cães e Gatos 500ml</h4>
-        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=300" alt="Shampoo para pets" width="150" height="150">
-        <p>Shampoo suave, desenvolvido para todos os tipos de pelagem.</p>
-        <p>Valor: R$ 29,90</p>
-      </article>
+    <section class="mb-4" aria-labelledby="titulo-higiene">
+      <h2 id="titulo-higiene" class="h4 border-bottom pb-2">Higiene e limpeza</h2>
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <article class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600&q=80" class="card-img-top" alt="Cão em ambiente de higiene, representando tapetes e cuidados de limpeza.">
+            <div class="card-body">
+              <h3 class="h5 card-title">Tapete Higiênico Super Absorvente (30 un.)</h3>
+              <p class="card-text">Gel super absorvente, ideal para treinamento de cães.</p>
+              <p class="fw-bold text-primary mb-0">R$ 59,90</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6">
+          <article class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" class="card-img-top" alt="Frascos de shampoo para banho de pets em ambiente de petshop.">
+            <div class="card-body">
+              <h3 class="h5 card-title">Shampoo Neutro Cães e Gatos 500 ml</h3>
+              <p class="card-text">Shampoo suave para todos os tipos de pelagem.</p>
+              <p class="fw-bold text-primary mb-0">R$ 29,90</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <p>
+      <a class="btn btn-primary" href="agendamento.html">Agendar banho ou tosa</a>
+    </p>
   </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <hr>
-    <p>© 2026 PetRafael. Todos os direitos reservados.</p>
-    <p>Autor: Rafael Fontes Souza</p>
-    <p>Curso: Análise e Desenvolvimento de Sistemas - Disciplina: Fundamentos de Sistemas Web</p>
-    <p>E-mail: contato@petrafael.com.br | Telefone: (11) 4000-0000</p>
-    <p>
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a> |
-      <a href="contato.html">Contato</a>
-    </p>
+  <footer class="bg-light border-top py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 small">© <span id="ano-atual">2026</span> PetRafael.</p>
+      <nav aria-label="Rodapé">
+        <a href="index.html">Início</a> · <a href="servicos.html">Serviços</a> · <a href="contato.html">Contato</a>
+      </nav>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/formularios.js"></script>
 </body>
 </html>
-

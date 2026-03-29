@@ -2,76 +2,94 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>PetRafael - Contato</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fale com o PetRafael: endereço, telefone e formulário de mensagem.">
+  <title>PetRafael — Contato</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <h1>PetRafael</h1>
-    <p>Cuidando do seu pet com carinho</p>
-    <nav>
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a> |
-      <a href="contato.html">Contato</a>
+  <a class="visually-hidden-focusable btn btn-sm btn-primary position-fixed top-0 start-0 m-2 z-3" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+  <header class="border-bottom bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light" aria-label="Menu principal do PetRafael">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">PetRafael</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir ou fechar menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+            <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+            <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contato.html" aria-current="page">Contato</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <hr>
   </header>
 
-  <!-- Corpo da página -->
-  <main>
-    <h2>Contato PetRafael</h2>
+  <main id="conteudo-principal" class="container py-4" tabindex="-1">
+    <h1 class="h2 mb-3">Contato PetRafael</h1>
 
-    <section>
-      <h3>Dados de contato</h3>
-      <p><strong>Endereço:</strong> Rua dos Pets, 123 - Bairro Centro - São Paulo/SP</p>
-      <p><strong>E-mail:</strong> contato@petrafael.com.br</p>
-      <p><strong>Telefone:</strong> (11) 4000-0000</p>
-      <p><strong>Horário de funcionamento:</strong> Segunda a sábado, das 9h às 19h.</p>
+    <section class="row mb-4" aria-labelledby="titulo-dados">
+      <div class="col-lg-6 mb-3">
+        <h2 id="titulo-dados" class="h5">Dados de contato</h2>
+        <address class="mb-0">
+          <strong>Endereço:</strong> Rua dos Pets, 123 — Bairro Centro — São Paulo/SP<br>
+          <strong>E-mail:</strong> <a href="mailto:contato@petrafael.com.br">contato@petrafael.com.br</a><br>
+          <strong>Telefone:</strong> <a href="tel:+551140000000">(11) 4000-0000</a><br>
+          <strong>Horário:</strong> segunda a sábado, 9h às 19h.
+        </address>
+      </div>
     </section>
 
-    <section>
-      <h3>Envie uma mensagem</h3>
-      <p>Preencha o formulário abaixo para entrar em contato com o PetRafael.</p>
+    <section aria-labelledby="titulo-mensagem">
+      <h2 id="titulo-mensagem" class="h5">Envie uma mensagem</h2>
+      <p class="text-muted">Preencha os campos obrigatórios. O envio é apenas simulado no navegador.</p>
 
-      <!-- Formulário estático (sem funcionalidade) -->
-      <form>
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome"><br><br>
-
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-
-        <label for="tipo">Tipo de interesse:</label><br>
-        <select id="tipo" name="tipo">
-          <option value="produtos">Produtos</option>
-          <option value="servicos-banho">Serviços - Banho</option>
-          <option value="servicos-tosa">Serviços - Tosa</option>
-          <option value="outros">Outros</option>
-        </select><br><br>
-
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="5" cols="40"></textarea><br><br>
-
-        <input type="submit" value="Enviar">
+      <form id="form-contato" class="col-lg-8 px-0">
+        <div class="mb-3">
+          <label for="contato-nome" class="form-label">Nome <span class="text-danger" aria-hidden="true">*</span></label>
+          <input type="text" class="form-control" id="contato-nome" name="nome" required placeholder="Seu nome completo" autocomplete="name">
+        </div>
+        <div class="mb-3">
+          <label for="contato-email" class="form-label">E-mail <span class="text-danger" aria-hidden="true">*</span></label>
+          <input type="email" class="form-control" id="contato-email" name="email" required placeholder="nome@email.com" autocomplete="email">
+        </div>
+        <div class="mb-3">
+          <label for="contato-tipo" class="form-label">Tipo de interesse</label>
+          <select class="form-select" id="contato-tipo" name="tipo">
+            <option value="produtos">Produtos</option>
+            <option value="servicos-banho">Serviços — Banho</option>
+            <option value="servicos-tosa">Serviços — Tosa</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="contato-mensagem" class="form-label">Mensagem <span class="text-danger" aria-hidden="true">*</span></label>
+          <textarea class="form-control" id="contato-mensagem" name="mensagem" rows="5" required placeholder="Escreva sua dúvida ou pedido"></textarea>
+        </div>
+        <div id="status-contato" class="alert d-none mb-3" role="status"></div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
     </section>
   </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <hr>
-    <p>© 2026 PetRafael. Todos os direitos reservados.</p>
-    <p>Autor: Rafael Fontes Souza</p>
-    <p>Curso: Análise e Desenvolvimento de Sistemas - Disciplina: Fundamentos de Sistemas Web</p>
-    <p>E-mail: contato@petrafael.com.br | Telefone: (11) 4000-0000</p>
-    <p>
-      <a href="index.html">Início</a> |
-      <a href="produtos.html">Produtos</a> |
-      <a href="servicos.html">Serviços</a> |
-      <a href="contato.html">Contato</a>
-    </p>
+  <footer class="bg-light border-top py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 small">© <span id="ano-atual">2026</span> PetRafael.</p>
+      <nav aria-label="Rodapé">
+        <a href="index.html">Início</a> · <a href="README-ajuda.txt">Ajuda do site</a>
+      </nav>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/formularios.js"></script>
 </body>
 </html>
-
